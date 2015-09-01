@@ -1,1 +1,57 @@
-@import "resources/assets/sass/primer";
+//@import "resources/assets/sass/primer";
+$bgColour: #fbfbfb;
+$contentWidth: 980px;
+
+$primaryFont: proxima-nova, sans-serif;
+$primaryFontWeight: 200;
+
+body {
+    background-color: $bgColour;
+    font-family: $primaryFont !important;
+    font-weight: $primaryFontWeight;
+}
+
+h1 {
+    font-weight: $primaryFontWeight;
+    font-family: $primaryFont !important;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-weight: $primaryFontWeight;
+    font-family: $primaryFont !important;
+    color: #7b7b7b;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.container {
+    max-width: $contentWidth;
+    margin: 0 auto;
+}
+
+.header {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+
+    h1.header_under {
+        margin-top: 0.4em;
+    }
+
+}
+
+span.title_suppliment {
+    margin-left: 1.4em;
+    color: #aeaeae;
+}
+
+.blog-item {
+    margin-bottom: 0.8em;
+
+    h1 {
+        font-size: 170%;
+    }
+}
