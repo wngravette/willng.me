@@ -11,7 +11,9 @@
             <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
         <!--<![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--link rel="stylesheet" href="{{asset('css/app.css')}}"/-->
+        <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
+        <script src="https://use.typekit.net/dtm4seu.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
         @yield('additional_head')
     </head>
     <body>
