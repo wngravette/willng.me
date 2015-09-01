@@ -11,6 +11,9 @@ class HomeController extends Controller
 {
     public function render()
     {
-        return view('home');
+        $name_catches = ['Melbournian', 'Lord of Dance', 'Septuple Threat', 'Swimwear Model'];
+        $name_catch = $name_catches[rand(0, count($name_catches) - 1)];
+
+        return view('home', ['name_catch' => $name_catch]);
     }
 }
