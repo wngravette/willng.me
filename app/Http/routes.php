@@ -27,3 +27,9 @@ Route::get('dev/asx', 'DevController@asx');
 Route::get('dev/value', 'DevController@getValue');
 Route::get('dev/id', 'DevController@id');
 Route::get('dev/retro', 'DevController@retroVal');
+
+//Backend routes...
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', 'BackendController@render');
+});
