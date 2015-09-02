@@ -23,6 +23,13 @@ class HomeController extends Controller
         //Logic for CIV chart
         $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
 
+        if (Auth::check())
+        {
         return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData]);
+        }
+        else
+        {
+            abort(404);
+        }
     }
 }
