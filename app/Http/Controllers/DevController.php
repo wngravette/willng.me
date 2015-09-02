@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use CIV;
+use App\CIV;
 use DB;
 
 use App\Http\Requests;
@@ -32,9 +32,17 @@ class DevController extends Controller
         $tickers = implode(",", $companies);
         $last_prices = implode(",", $lastPrices);
 
-        DB::table('CIV')->insert(
-            ['tickers' => $tickers, 'last_prices' => $last_prices]
-        );
+        // DB::table('CIV')->insert(
+        //     ['record_hash' => uniqid(true), 'tickers' => $tickers, 'last_prices' => $last_prices]
+        // );
+
+        $civ = new CIV;
+
+        $civ->record_hash = uniqid(true);
+        $civ->tickers = $tickers;
+        $civ->last_prices = $last_prices;
+
+        $civ->save();
 
     }
 }
