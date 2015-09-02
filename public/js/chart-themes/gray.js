@@ -4,7 +4,7 @@
  */
 
 Highcharts.theme = {
-	colors: ["#DDDF0D", "#7798BF", "#55BF3B", "#DF5353", "#aaeeee", "#ff0066", "#eeaaee",
+	colors: ["#0334de", "#45e271", "#8718b4", "#DF5353", "#aaeeee", "#ff0066", "#eeaaee",
 		"#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
 	chart: {
 		type: "spline",
@@ -92,16 +92,10 @@ Highcharts.theme = {
 		}
 	},
 	tooltip: {
-		backgroundColor: {
-			linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-			stops: [
-				[0, 'rgba(96, 96, 96, .8)'],
-				[1, 'rgba(16, 16, 16, .8)']
-			]
-		},
+		backgroundColor: '#f1f1f1',
 		borderWidth: 0,
 		style: {
-			color: '#FFF'
+			color: '#000'
 		}
 	},
 
@@ -117,9 +111,9 @@ Highcharts.theme = {
                 y2: 1
             },
             stops: [
-                [0, '#37f086'],
+                [0, '#0334de'],
                 [0.5, '#6498f1'],
-                [1, '#ee5e5e']
+                [1, '#b317ac']
             ]
         },
 			marker: {

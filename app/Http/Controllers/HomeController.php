@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\CIV;
+use App\CIVTotal;
 
 class HomeController extends Controller
 {
@@ -20,9 +21,8 @@ class HomeController extends Controller
         $name_catch = $name_catches[rand(0, count($name_catches) - 1)];
 
         //Logic for CIV chart
-        $priceData = CIV::orderBy('id', 'desc')->take(30)->get();
-        return $priceData;
+        $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
 
-        return view('home', ['name_catch' => $name_catch]);
+        return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData]);
     }
 }

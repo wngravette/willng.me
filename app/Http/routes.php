@@ -24,4 +24,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Dev routes...
 Route::get('dev/asx', 'DevController@asx');
+Route::get('dev/value', 'DevController@getValue');
 Route::get('dev/id', 'DevController@id');
+Route::get('dev/retro', 'DevController@retroVal');
