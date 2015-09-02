@@ -26,8 +26,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
 
         $schedule->call(function () {
 
@@ -42,14 +40,24 @@ class Kernel extends ConsoleKernel
                     $lastPrice = fgetcsv($handle);
                     fclose($handle);
                 }
-                array_push($lastPrices, $lastPrice);
+                array_push($lastPrices, $lastPrice[0]);
             }
 
-            $civ = new CIV();
+            $tickers = implode(",", $companies);
+            $last_prices = implode(",", $lastPrices);
 
-            $civ->tickers = implode(",", $companies);
-            $civ->last_prices = implode(",", $lastPrices);
+            // DB::table('CIV')->insert(
+            //     ['record_hash' => uniqid(true), 'tickers' => $tickers, 'last_prices' => $last_prices]
+            // );
 
-        })->dailyAt('17:00');
+            $civ = new CIV;
+
+            $civ->record_hash = uniqid(true);
+            $civ->tickers = $tickers;
+            $civ->last_prices = $last_prices;
+
+            $civ->save();
+
+        })->weekdays()->at('17:00');
     }
 }

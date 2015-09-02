@@ -26,23 +26,20 @@ class DevController extends Controller
                 $lastPrice = fgetcsv($handle);
                 fclose($handle);
             }
-            array_push($lastPrices, $lastPrice[0]);
+            $last_price = $lastPrice[0];
+
+            $civ = new CIV;
+
+            $civ->record_hash = uniqid(true);
+            $civ->ticker = $company;
+            $civ->last_price = $last_price;
+
+            $civ->save();
         }
+    }
 
-        $tickers = implode(",", $companies);
-        $last_prices = implode(",", $lastPrices);
-
-        // DB::table('CIV')->insert(
-        //     ['record_hash' => uniqid(true), 'tickers' => $tickers, 'last_prices' => $last_prices]
-        // );
-
-        $civ = new CIV;
-
-        $civ->record_hash = uniqid(true);
-        $civ->tickers = $tickers;
-        $civ->last_prices = $last_prices;
-
-        $civ->save();
-
+    public function id()
+    {
+        return uniqid(true);
     }
 }

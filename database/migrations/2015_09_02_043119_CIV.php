@@ -15,8 +15,8 @@ class CIV extends Migration
         Schema::create('CIV', function (Blueprint $table) {
             $table->increments('id');
             $table->string('record_hash');
-            $table->string('tickers');
-            $table->string('last_prices');
+            $table->string('ticker');
+            $table->string('last_price');
             $table->timestamps();
         });
     }
