@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="{{asset('js/highcharts.js')}}"/></script>
+        <script src="{{asset('js/chart-themes/gray.js')}}"/></script>
         <script src="https://use.typekit.net/dtm4seu.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
         @yield('additional_head')
