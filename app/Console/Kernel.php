@@ -40,23 +40,41 @@ class Kernel extends ConsoleKernel
                     $lastPrice = fgetcsv($handle);
                     fclose($handle);
                 }
-                array_push($lastPrices, $lastPrice[0]);
+                $last_price = $lastPrice[0];
+
+                $civ = new CIV;
+
+                $civ->record_hash = uniqid(true);
+                $civ->ticker = $company;
+                $civ->last_price = $last_price;
+
+                $civ->save();
             }
 
-            $tickers = implode(",", $companies);
-            $last_prices = implode(",", $lastPrices);
+        })->weekdays()->at('16:45');
 
-            // DB::table('CIV')->insert(
-            //     ['record_hash' => uniqid(true), 'tickers' => $tickers, 'last_prices' => $last_prices]
-            // );
+        $schedule->call(function () {
 
-            $civ = new CIV;
+            $tickers = Investment::all();
+            $values = [];
 
-            $civ->record_hash = uniqid(true);
-            $civ->tickers = $tickers;
-            $civ->last_prices = $last_prices;
+            foreach ($tickers as $company)
+            {
+                $ticker = $company->ticker;
+                $amountOwned = $company->number_owned;
+                $civEntry = CIV::where('ticker', $ticker)->orderBy('id', 'desc')->first();
+                $value = $amountOwned * $civEntry->last_price;
+                array_push($values, $value);
+            }
 
-            $civ->save();
+            $civTotal = array_sum($values);
+
+            $civEntry = new CIVTotal;
+
+            $civEntry->record_hash = uniqid(true);
+            $civEntry->amount = $civTotal;
+
+            $civEntry->save();
 
         })->weekdays()->at('17:00');
     }
