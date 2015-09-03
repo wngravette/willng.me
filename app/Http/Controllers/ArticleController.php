@@ -44,7 +44,7 @@ class ArticleController extends Controller
         $article = new Article($input);
         $article->save();
 
-        return redirect('/dashboard')->with('status', 'Profile updated!');;
+        return redirect('/dashboard')->with('status', 'Your blog post has been published.');;
     }
 
     /**
