@@ -15,6 +15,7 @@
             <div class="l-box">
                 <p class="timeago">{{$post->human_time}}</p>
                 <h1>{{$post->article_headline}}</h1>
+                <p>{{$post->article_catch}}</p>
             </div>
         </div>
         @endforeach

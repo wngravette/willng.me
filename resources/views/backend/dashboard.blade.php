@@ -14,7 +14,7 @@
         @foreach ($blog_posts as $post)
         <div class="blog_post">
             <h2>{{$post->article_headline}}</h2>
-            <p><span class="state state-open">Online</span>Published {{$post->human_time}}</p>
+            <p>Published {{$post->human_time}}</p>
         </div>
         @endforeach
     </div>
