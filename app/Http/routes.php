@@ -14,6 +14,16 @@
 Route::get('/', 'HomeController@render');
 
 // Authentication routes...
+Route::get('login', function()
+{
+    return Redirect::to('auth/login');
+});
+
+Route::get('logout', function()
+{
+    return Redirect::to('auth/logout');
+});
+
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
@@ -32,4 +42,6 @@ Route::get('dev/retro', 'DevController@retroVal');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'BackendController@render');
+    Route::get('dashboard/new-post', 'ArticleController@create');
+    Route::post('dashboard/new-post', 'ArticleController@store');
 });
