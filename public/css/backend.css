@@ -657,7 +657,7 @@ dl.form {
   dl.form > dd input[type="password"],
   dl.form > dd input[type="email"],
   dl.form > dd input[type="url"] {
-    width: 440px;
+    width: 100%;
     max-width: 100%;
     margin-right: 5px; }
   dl.form > dd input.shorter {
