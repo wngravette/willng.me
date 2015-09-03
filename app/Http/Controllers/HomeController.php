@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\CIV;
 use App\CIVTotal;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -20,10 +21,18 @@ class HomeController extends Controller
 
         $name_catch = $name_catches[rand(0, count($name_catches) - 1)];
 
+        //Blog posts
+        $blogPosts = Article::orderBy('created_at', 'desc')->take(5)->get();
+
+        foreach ($blogPosts as $post)
+        {
+            $post->human_time = $post->created_at->diffForHumans();
+        }
+
         //Logic for CIV chart
         $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
 
-        return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData]);
+        return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
 
     }
 }

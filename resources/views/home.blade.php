@@ -10,18 +10,14 @@
 </div>
 <div class="pure-g">
     <div class="pure-u-16-24 blog">
+        @foreach ($blog_posts as $post)
         <div class="pure-u-1 blog-item">
             <div class="l-box">
-                <p class="timeago">6 days ago</p>
-                <h1>This is a blog post, and this is it's title</h1>
+                <p class="timeago">{{$post->human_time}}</p>
+                <h1>{{$post->article_headline}}</h1>
             </div>
         </div>
-        <div class="pure-u-1 blog-item">
-            <div class="l-box">
-                <p class="timeago">18 days ago</p>
-                <h1>This is an additional, older blog post, and this is&nbsp;it’s&nbsp;title</h1>
-            </div>
-        </div>
+        @endforeach
     </div>
     <div class="pure-u-8-24">
         <div class="l-box">
