@@ -34,6 +34,11 @@ span.title_suppliment {
 .blog-item {
   margin-bottom: 0.8em; }
   .blog-item h1 {
-    font-size: 170%; }
+    font-size: 170%;
+    display: inline; }
+    .blog-item h1:hover {
+      border-bottom: 1px dotted;
+      cursor: pointer;
+      cursor: hand; }
 
 /*# sourceMappingURL=app.css.map */

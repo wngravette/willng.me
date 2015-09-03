@@ -53,5 +53,12 @@ span.title_suppliment {
 
     h1 {
         font-size: 170%;
+        display: inline;
+
+        &:hover {
+            border-bottom: 1px dotted;
+            cursor: pointer;
+            cursor: hand;
+        }
     }
 }
