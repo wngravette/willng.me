@@ -17,12 +17,13 @@ class DevController extends Controller
     public function asx()
     {
 
-        $companies = ['AWV', 'QBL', 'CM8'];
+        $companies = Investment::all();
         $lastPrices = [];
 
         foreach ($companies as $company)
         {
-            $handle = @fopen("http://download.finance.yahoo.com/d/quotes.csv?s=$company.AX&f=l1", "r");
+            $ticker = $company->ticker;
+            $handle = @fopen("http://download.finance.yahoo.com/d/quotes.csv?s=$ticker.AX&f=l1", "r");
             if ($handle !== FALSE)
             {
                 $lastPrice = fgetcsv($handle);
@@ -33,7 +34,7 @@ class DevController extends Controller
             $civ = new CIV;
 
             $civ->record_hash = uniqid(true);
-            $civ->ticker = $company;
+            $civ->ticker = $ticker;
             $civ->last_price = $last_price;
 
             $civ->save();
