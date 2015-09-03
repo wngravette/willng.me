@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ asset('css/backend-custom.css')}}"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="{{asset('js/highcharts.js')}}"/></script>
+        <script src="{{asset('js/ckeditor/ckeditor.js')}}"/></script>
     </head>
     <body>
         <div class="container">

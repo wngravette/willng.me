@@ -2,7 +2,7 @@
 @section('content')
 {{{ $name or null }}}
 <div class="columns">
-    <div class="one-half column">
+    <div class="three-fifths column">
         <h3>New Blog Post</h3>
         <form method="post">
             {!! csrf_field() !!}
@@ -16,7 +16,9 @@
             </dl>
             <dl class="form">
                 <dt><label>Article Body</label></dt>
-                <dd><textarea name="article_body"></textarea></dd>
+                <dd><textarea name="article_body" id="editor1" rows="20" cols="80"></textarea>
+                    <script>CKEDITOR.replace( 'editor1' );</script>
+                </dd>
             </dl>
             <div class="form-actions">
                 <button type="submit" class="btn btn-primary">Publish</button>
