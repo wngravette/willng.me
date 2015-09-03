@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Input;
+use App\Article;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +29,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.new-article');
     }
 
     /**
@@ -37,7 +40,11 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = Input::all();
+        $article = new Article($input);
+        $article->save();
+
+        return redirect('/dashboard')->with('status', 'Profile updated!');;
     }
 
     /**
