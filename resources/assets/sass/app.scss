@@ -24,6 +24,10 @@ a:visited {
     color: inherit;
 }
 
+.mobile_only {
+    display: none;
+}
+
 h1 {
     font-weight: $primaryFontWeight;
     font-family: $primaryFont !important;
@@ -96,5 +100,11 @@ span.title_suppliment {
         margin-left: 0;
         margin-bottom: 1em;
         display: block;
+    }
+    .mobile_only {
+        display: inherit;
+    }
+    .desktop_only {
+        display: none;
     }
 }
