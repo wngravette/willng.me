@@ -12,7 +12,7 @@ class CIVtotals extends Migration
      */
     public function up()
     {
-        Schema::create('CIVtotals', function (Blueprint $table) {
+        Schema::create('CIVTotals', function (Blueprint $table) {
             $table->increments('id');
             $table->string('record_hash');
             $table->decimal('amount', 8, 2);
@@ -27,6 +27,6 @@ class CIVtotals extends Migration
      */
     public function down()
     {
-        Schema::drop('CIVtotals');
+        Schema::drop('CIVTotals');
     }
 }
