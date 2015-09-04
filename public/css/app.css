@@ -3,6 +3,14 @@ body {
   font-family: proxima-nova, sans-serif !important;
   font-weight: 200; }
 
+a:link {
+  text-decoration: none;
+  color: inherit; }
+
+a:visited {
+  text-decoration: none;
+  color: inherit; }
+
 h1 {
   font-weight: 200;
   font-family: proxima-nova, sans-serif !important;
@@ -40,5 +48,17 @@ span.title_suppliment {
       border-bottom: 1px dotted;
       cursor: pointer;
       cursor: hand; }
+
+@media (max-width: 860px) {
+  h1 {
+    font-size: 150%; }
+  h1.header_under span.sep {
+    display: none; }
+  h1.header_under span.second {
+    display: block; }
+  span.title_suppliment {
+    margin-left: 0;
+    margin-bottom: 1em;
+    display: block; } }
 
 /*# sourceMappingURL=app.css.map */

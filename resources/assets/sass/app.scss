@@ -5,10 +5,23 @@ $contentWidth: 980px;
 $primaryFont: proxima-nova, sans-serif;
 $primaryFontWeight: 200;
 
+$mobile: "(max-width: 860px)";
+$desktop: "(min-width: 1024px)";
+
 body {
     background-color: $bgColour;
     font-family: $primaryFont !important;
     font-weight: $primaryFontWeight;
+}
+
+a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
 }
 
 h1 {
@@ -60,5 +73,28 @@ span.title_suppliment {
             cursor: pointer;
             cursor: hand;
         }
+    }
+}
+
+
+@media #{$mobile} {
+    h1 {
+        font-size: 150%;
+    }
+
+    h1.header_under {
+        span.sep {
+            display: none;
+        }
+
+        span.second {
+            display: block;
+        }
+    }
+
+    span.title_suppliment {
+        margin-left: 0;
+        margin-bottom: 1em;
+        display: block;
     }
 }
