@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CIVTotal extends Model
 {
-    protected $table = 'CIVTotals';
+    protected $table = 'civ_totals';
 }
