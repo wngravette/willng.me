@@ -30,7 +30,9 @@ class HomeController extends Controller
         }
 
         //Logic for CIV chart
-        $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
+        //$priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
+
+        $priceData = [1,2,3];
 
         return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
 
