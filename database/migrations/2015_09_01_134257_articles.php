@@ -17,6 +17,7 @@ class Articles extends Migration
             $table->string('article_headline');
             $table->string('article_catch');
             $table->text('article_body');
+            $table->string('article_url');
             $table->timestamps();
         });
     }

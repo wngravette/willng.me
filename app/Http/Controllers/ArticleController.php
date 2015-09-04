@@ -42,6 +42,7 @@ class ArticleController extends Controller
     {
         $input = Input::all();
         $article = new Article($input);
+        $article->article_url = rtrim(preg_replace('/[^a-z0-9]+/i', '-', strtolower(strip_tags($input['article_headline']))), "-");
         $article->save();
 
         return redirect('/dashboard')->with('status', 'Your blog post has been published.');;
@@ -55,7 +56,11 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article_url = $id;
+
+        $article = Article::where('article_url', $article_url)->first();
+
+        return view('blog', ['article' => $article]);
     }
 
     /**
