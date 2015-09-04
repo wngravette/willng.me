@@ -59,6 +59,7 @@ class ArticleController extends Controller
         $article_url = $id;
 
         $article = Article::where('article_url', $article_url)->first();
+        $article->humantime = $article->created_at->diffForHumans();
 
         return view('blog', ['article' => $article]);
     }
@@ -71,7 +72,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id)->toArray();
+        return view('backend.edit-article', ['article' => $article]);
     }
 
     /**
@@ -83,7 +85,13 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->article_headline = $request->article_headline;
+        $article->article_catch = $request->article_catch;
+        $article->article_body = $request->article_body;
+        $article->save();
+
+        return redirect('dashboard');
     }
 
     /**

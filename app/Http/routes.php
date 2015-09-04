@@ -39,10 +39,12 @@ Route::get('dev/id', 'DevController@id');
 Route::get('dev/retro', 'DevController@retroVal');
 
 //Backend routes...
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('dashboard', 'BackendController@render');
-    Route::get('dashboard/new-post', 'ArticleController@create');
-    Route::post('dashboard/new-post', 'ArticleController@store');
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
+    Route::get('/', 'BackendController@render');
+    Route::get('new-post', 'ArticleController@create');
+    Route::post('new-post', 'ArticleController@store');
+    Route::get('edit-post/{id}', 'ArticleController@edit');
+    Route::post('edit-post/{id}', 'ArticleController@update');
 });
 
 Route::group(['prefix' => 'api'], function () {
