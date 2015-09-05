@@ -77,6 +77,6 @@ class Kernel extends ConsoleKernel
 
             $civEntry->save();
 
-        })->weekdays()->at('8:48');
+        })->weekdays()->at('18:53');
     }
 }
