@@ -1,6 +1,6 @@
 ## willng.me
 
-Personal website (not yet online)
+Personal website, online at http://willng.me/
 
 ![willng.me v2 mockup](https://raw.githubusercontent.com/wngravette/willng.me/master/designs/mock1.jpg)
 
