@@ -57,8 +57,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article_url = $id;
-
         $article = Article::where('article_url', $article_url)->first();
+        if (!$article) {abort(404);}
         $article->humantime = $article->created_at->diffForHumans();
 
         return view('blog', ['article' => $article]);
