@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 });
 
 Route::group(['prefix' => 'api'], function () {
-    Route::get('down', 'APIController@down');
+    Route::get('blog/latest', 'APIController@latestBlog');
 });
 
 //Blog routes...
