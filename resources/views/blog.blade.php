@@ -22,7 +22,8 @@
         <div class="l-box">
             <p class="desktop_only">This is my blog, it provides little to no knowledge or information towards humanity's collective wisdom.</p>
             <p class="mobile_only">This has been my blog, I'm sure it provided little to no knowledge or information towards humanity's collective wisdom.</p>
-            <p>I hope you enjoyed enjoy. If not, whine at me at william@willng.me.</p>
+            <p class="desktop_only">I hope you enjoy. Or, whine at me at william@willng.me</p>
+            <p class="mobile_only">I hope you enjoyed. If not, whine at me at william@willng.me</p>
         </div>
     </div>
 </div>
