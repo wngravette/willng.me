@@ -38,7 +38,7 @@
         <meta name="msapplication-square310x310logo" content="{{asset('img/favicons')}}/mstile-310x310.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="application-name" content="William Naughton-Gravette"/>
-        <meta property=”og:title” content=”{{$article->William Naughton-Gravette”/>
+        <meta property=”og:title” content=”William Naughton-Gravette”/>
         <meta name=”description” content=”The personal website of full-stack developer and sugar daddy, William Naughton-Gravette.”>
         @yield('additional_head')
     </head>
