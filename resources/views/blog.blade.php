@@ -1,4 +1,8 @@
 @extends('wrap')
+@section('additional_head')
+<meta property=”og:title” content=”{{$article->article_headline}} : William Naughton-Gravette”/>
+<meta property=”og:type” content=”article”/>
+@endsection
 @section('content')
 <div class="pure-g header">
     <div class="pure-u-1">
