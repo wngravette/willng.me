@@ -30,3 +30,15 @@
 .state-closed { background-color: $status-closed; }
 
 .state-renamed { background-color: $status-renamed; }
+
+.state-greem {
+  background-color: $status-open;
+}
+
+.state-purple { background-color: $status-merged; }
+
+.state-red { background-color: $status-closed; }
+
+.state-yellow { background-color: $status-renamed; }
+
+.state-blue { background-color: #459ae9; }

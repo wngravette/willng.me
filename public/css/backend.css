@@ -1667,6 +1667,21 @@ a.tabnav-extra:hover {
 .state-renamed {
   background-color: #fffa5d; }
 
+.state-greem {
+  background-color: #6cc644; }
+
+.state-purple {
+  background-color: #6e5494; }
+
+.state-red {
+  background-color: #bd2c00; }
+
+.state-yellow {
+  background-color: #fffa5d; }
+
+.state-blue {
+  background-color: #459ae9; }
+
 .tooltipped {
   position: relative; }
 

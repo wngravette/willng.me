@@ -13,6 +13,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss', './public/css/app.css')
-       .sass('backend.scss', './public/css/backend.css')
-       .sass('backend-custom.scss', './public/css/backend-custom.css');
+        .sass('api.scss', './public/css/api.css')
+        .sass('backend.scss', './public/css/backend.css')
+        .sass('backend-custom.scss', './public/css/backend-custom.css');
 });
