@@ -3,7 +3,7 @@
 <div class="columns">
     <div class="two-thirds column">
         <h3>Actions</h3>
-        <a class="btn" href="new-post" role="button">New Blog Post</a>
+        <a class="btn" href="{{url('dashboard/new-post')}}" role="button">New Blog Post</a>
         <a class="btn" href="#" role="button">New Investment</a>
         <h3>Blog Posts</h3>
         @if (isset($status))
@@ -15,7 +15,7 @@
         <div class="blog_post">
             <h2>{{$post->article_headline}}</h2>
             <p>Published {{$post->human_time}}</p>
-            <a class="btn btn-sm" href="edit-post/{{$post->id}}" role="button">Edit Post</a>
+            <a class="btn btn-sm" href="{{url('dashboard/edit-post/'.$post->id)}}" role="button">Edit Post</a>
         </div>
         @endforeach
     </div>
