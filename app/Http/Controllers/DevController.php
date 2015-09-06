@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Mail;
+use App\User;
 use App\CIV;
 use App\Investment;
 use App\CIVTotal;
@@ -79,6 +81,15 @@ class DevController extends Controller
             $civEntry->save();
         }
 
+    }
+
+    public function send()
+    {
+        $user = User::findOrFail(3);
+
+        Mail::send('email.test', ['user' => $user], function ($m) use ($user) {
+            $m->to($user->email, $user->name)->subject('Your Reminder!');
+        });
     }
 
     public function id()

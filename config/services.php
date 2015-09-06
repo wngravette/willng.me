@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => 'mail.willng.me',
+        'secret' => 'key-58d8299c7feb969a6e3035b6e2183638',
     ],
 
     'mandrill' => [
