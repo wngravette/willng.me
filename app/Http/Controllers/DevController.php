@@ -85,7 +85,7 @@ class DevController extends Controller
 
     public function send()
     {
-        $user = User::findOrFail(3);
+        $user = User::findOrFail(1);
 
         Mail::send('email.test', ['user' => $user], function ($m) use ($user) {
             $m->to($user->email, $user->name)->subject('Your Reminder!');
