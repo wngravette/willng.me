@@ -23,7 +23,7 @@
     <div class="pure-u-1 pure-u-lg-8-24">
         <div class="l-box">
             <p>I have interests in a number of publically-listed Australian companies, and I like to keep track of them here for everyone’s perusal.</p>
-            <p>So here's my performance on the ASX in the past month or so.</p>
+            <p>So here's my performance on the ASX in the past month or so. New data is published at 5 pm on weekdays.</p>
             <script>
             $(function () {
                 $('#CIVchart').highcharts({
