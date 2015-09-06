@@ -13,7 +13,9 @@
 <div class="pure-g">
     <div class="pure-u-20-24 pure-u-lg-16-24">
         <div class="l-box">
-            <p>This is my pointless API, I hope you never use it because I have absolutely no means of monitoring it's use and abuse.</p>
+            <p>This is my pointless API. I hope you never use it because I have absolutely no means of monitoring it's use and abuse.</p>
+            <p><span class="state state-blue">GET</span> <a href="{{url('api/blog')}}"><code>/blog</code></a></p>
+            <p>A JSON representation of up to 5 of my latest blog posts.</p>
             <p><span class="state state-blue">GET</span> <a href="{{url('api/blog/latest')}}"><code>/blog/latest</code></a></p>
             <p>A full JSON representation of my latest blog post.</p>
             <p><span class="state state-blue">GET</span> <a href="{{url('api/inv/civ')}}"><code>/inv/civ</code></a></p>

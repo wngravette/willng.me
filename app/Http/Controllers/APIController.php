@@ -24,6 +24,12 @@ class APIController extends Controller
         return $article;
     }
 
+    public function blog5()
+    {
+        $article = Article::orderBy('id', 'desc')->take(5)->get();
+        return $article;
+    }
+
     public function civ()
     {
         $civ = CIVTotal::orderBy('id', 'desc')->take(1)->get();
