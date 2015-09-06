@@ -3,6 +3,8 @@
 namespace App\Console;
 
 use CIV;
+use Mail;
+use App\User;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -26,6 +28,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+
+        //Fetch latest price data for all investments
 
         $schedule->call(function () {
 
@@ -54,6 +58,8 @@ class Kernel extends ConsoleKernel
 
         })->weekdays()->at('16:45');
 
+        //Calculate the CIV and publish it to the CIVTotals table, making the data public.
+
         $schedule->call(function () {
 
             $tickers = Investment::all();
@@ -77,6 +83,7 @@ class Kernel extends ConsoleKernel
 
             $civEntry->save();
 
-        })->weekdays()->at('18:53');
+        })->weekdays()->at('17:00');
+
     }
 }
