@@ -2,9 +2,12 @@
 
 namespace App\Console;
 
-use CIV;
 use Mail;
 use App\User;
+use App\CIV;
+use App\Investment;
+use App\CIVTotal;
+use DB;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -84,16 +87,6 @@ class Kernel extends ConsoleKernel
             $civEntry->save();
 
         })->weekdays()->at('17:00');
-
-        $schedule->call(function () {
-
-            $user = User::findOrFail(1);
-
-            Mail::send('email.test', ['user' => $user], function ($m) use ($user) {
-                $m->to($user->email, $user->name)->subject('Your Reminder!');
-            });
-
-        })->weekdays()->at('18:34');
 
     }
 }
