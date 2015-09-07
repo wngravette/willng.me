@@ -1,12 +1,6 @@
+<?php $name_catch = '503'; ?>
 @extends('wrap')
 @section('content')
-<div class="pure-g header">
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h1>William Naughton-Gravette <span class="title_suppliment">503</h1>
-        </div>
-    </div>
-</div>
 <div class="pure-g">
     <div class="pure-u-20-24 pure-u-lg-16-24">
         <div class="l-box">

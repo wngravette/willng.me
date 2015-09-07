@@ -54,6 +54,14 @@
     </head>
     <body>
         <div class="container">
+            <div class="pure-g header">
+                <div class="pure-u-1">
+                    <div class="l-box">
+                        <h1>William Naughton-Gravette <span class="title_suppliment">{{$name_catch}}</h1>
+                        @yield('header_under')
+                    </div>
+                </div>
+            </div>
             @yield('content')
         </div>
     </body>

@@ -61,7 +61,7 @@ class ArticleController extends Controller
         if (!$article) {abort(404);}
         $article->humantime = $article->created_at->diffForHumans();
 
-        return view('blog', ['article' => $article]);
+        return view('blog', ['name_catch' => 'Shit Blog', 'article' => $article]);
     }
 
     /**

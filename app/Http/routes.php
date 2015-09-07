@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 
 Route::group(['prefix' => 'api'], function () {
     Route::get('/', function() {
-        return view('api');
+        return view('api', ['name_catch' => 'API']);
     });
     Route::get('blog', 'APIController@blog5');
     Route::get('blog/latest', 'APIController@latestBlog');

@@ -4,13 +4,6 @@
 <meta property=”og:type” content=”article”/>
 @endsection
 @section('content')
-<div class="pure-g header">
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h1>William Naughton-Gravette <span class="title_suppliment">Shit Blog</h1>
-        </div>
-    </div>
-</div>
 <div class="pure-g">
     <div class="pure-u-1 pure-u-lg-16-24 blog">
         <div class="pure-u-21-24 blog_body">

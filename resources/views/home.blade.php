@@ -1,13 +1,8 @@
 @extends('wrap')
+@section('header_under')
+<h1 class="header_under">Full Stack Developer <span class="sep">&#183;</span> <span class="second">Partner at Naughton &amp; Ross</span></h1>
+@endsection
 @section('content')
-<div class="pure-g header">
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h1>William Naughton-Gravette <span class="title_suppliment">{{$name_catch}}</h1>
-            <h1 class="header_under">Full Stack Developer <span class="sep">&#183;</span> <span class="second">Partner at Naughton &amp; Ross</span></h1>
-        </div>
-    </div>
-</div>
 <div class="pure-g">
     <div class="pure-u-1 pure-u-lg-16-24 blog">
         @foreach ($blog_posts as $post)
