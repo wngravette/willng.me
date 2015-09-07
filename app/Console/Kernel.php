@@ -85,5 +85,15 @@ class Kernel extends ConsoleKernel
 
         })->weekdays()->at('17:00');
 
+        $schedule->call(function () {
+
+            $user = User::findOrFail(1);
+
+            Mail::send('email.test', ['user' => $user], function ($m) use ($user) {
+                $m->to($user->email, $user->name)->subject('Your Reminder!');
+            });
+
+        })->weekdays()->at('18:34');
+
     }
 }
