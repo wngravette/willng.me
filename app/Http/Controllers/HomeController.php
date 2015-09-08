@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function render()
     {
         //Deeply hilarious catches
-        $name_catches = ['Melbournian', 'Lord of Dance', 'Septuple Threat', 'Swimwear Model', '60% Cheese', 'Purveyor of Cheap Wine', 'Mummy Blogger', 'Recommended by 4 out of 5 Dentists', 'Vapid Moron, Frankly', 'Still Alive', 'Gold-digger'];
+        $name_catches = ['Melbournian', 'Lord of Dance', 'Septuple Threat', 'Swimwear Model', '60% Cheese', 'Purveyor of Cheap Wine', 'Mummy Blogger', 'Recommended by 4 out of 5 Dentists', 'Vapid Moron, Frankly', 'Still Alive', 'Gold-digger', 'Your Dad', 'Coolest Mother-in-law Ever', 'Refined Lady', 'The Original People\'s Princess', 'Grier Family Social Media Spin-doctor'];
 
         $name_catch = $name_catches[rand(0, count($name_catches) - 1)];
 
