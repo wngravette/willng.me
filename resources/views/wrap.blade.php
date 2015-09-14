@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="{{asset('css/grid.css')}}">
         <!--<![endif]-->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="{{asset('js/highcharts.js')}}"/></script>
