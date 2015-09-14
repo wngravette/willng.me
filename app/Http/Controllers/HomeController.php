@@ -33,7 +33,7 @@ class HomeController extends Controller
         $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
 
 
-        return view('home', ['name_catch' => $name_catch, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
+        return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
 
     }
 }

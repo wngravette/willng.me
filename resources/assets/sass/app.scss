@@ -84,20 +84,24 @@ span.title_suppliment {
     }
 }
 
-pre {
+.blog_body {
+    margin-bottom: 3em;
 
-    code {
-        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-        font-size: 80%;
-        max-width: 80%;
-        margin-bottom: 10px;
-        overflow: auto;
-        padding: 5px;
-        background-color: #eee;
-        max-height: 600px;
-        line-height: 24px;
+    pre {
+        code {
+            font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+            font-size: 80%;
+            max-width: 80%;
+            margin-bottom: 10px;
+            overflow: auto;
+            padding: 5px;
+            background-color: #eee;
+            max-height: 600px;
+            line-height: 24px;
+        }
     }
 }
+
 
 
 @media #{$mobile} {
