@@ -54,6 +54,7 @@
             });
             </script>
             <div id="CIVchart" style="width:100%; height:100px;"></div>
+             @include('footer')
         </div>
     </div>
 </div>
