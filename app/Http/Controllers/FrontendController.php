@@ -39,6 +39,9 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('about');
+        //Deeply hilarious catches -- yes, as above. tedious but perhaps I'll move to DB l8r h8r
+        $name_catches = ['Melbournian', 'Lord of Dance', 'Septuple Threat', 'Swimwear Model', '60% Cheese', 'Purveyor of Cheap Wine', 'Mummy Blogger', 'Recommended by 4 out of 5 Dentists', 'Vapid Moron, Frankly', 'Still Alive', 'Gold-digger', 'Your Dad', 'Coolest Mother-in-law Ever', 'Refined Lady', 'The Original People\'s Princess', 'Grier Family Social Media Spin-doctor'];
+
+        return view('about', ['name_catches' => $name_catches]);
     }
 }
