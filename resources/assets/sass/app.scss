@@ -69,6 +69,15 @@ span.title_suppliment {
     color: #aeaeae;
 }
 
+span.title_suppliment_special {
+    margin-right: 1em;
+    color: #aeaeae;
+
+    &:first-of-type {
+        margin-left: 1.4em;
+    }
+}
+
 .blog-item {
     margin-bottom: 0.8em;
 
@@ -124,6 +133,17 @@ span.title_suppliment {
         margin-bottom: 1em;
         display: block;
     }
+
+    span.title_suppliment_special {
+        margin-left: 0;
+        display: block;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+    }
+
     .mobile_only {
         display: inherit;
     }

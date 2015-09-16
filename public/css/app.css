@@ -46,6 +46,12 @@ span.title_suppliment {
   margin-left: 1.4em;
   color: #aeaeae; }
 
+span.title_suppliment_special {
+  margin-right: 1em;
+  color: #aeaeae; }
+  span.title_suppliment_special:first-of-type {
+    margin-left: 1.4em; }
+
 .blog-item {
   margin-bottom: 0.8em; }
   .blog-item h1 {
@@ -80,6 +86,11 @@ span.title_suppliment {
     margin-left: 0;
     margin-bottom: 1em;
     display: block; }
+  span.title_suppliment_special {
+    margin-left: 0;
+    display: block; }
+    span.title_suppliment_special:first-of-type {
+      margin-left: 0; }
   .mobile_only {
     display: inherit; }
   .desktop_only {
