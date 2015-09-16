@@ -12,7 +12,7 @@ use App\CIV;
 use App\CIVTotal;
 use App\Article;
 
-class HomeController extends Controller
+class FrontendController extends Controller
 {
     public function render()
     {
@@ -35,5 +35,10 @@ class HomeController extends Controller
 
         return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
 
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@render');
+Route::get('/', 'FrontendController@render');
 
 // Authentication routes...
 Route::get('login', function()
@@ -58,6 +58,9 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('inv/civ/latest', 'APIController@civ');
     Route::get('inv/civ', 'APIController@civ30');
 });
+
+//General app routes...
+Route::get('about', 'FrontendController@about');
 
 //Blog routes...
 Route::get('{id}', 'ArticleController@show');
