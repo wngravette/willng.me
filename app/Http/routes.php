@@ -61,6 +61,7 @@ Route::group(['prefix' => 'api'], function () {
 
 //General app routes...
 Route::get('about', 'FrontendController@about');
+Route::get('investments', 'FrontendController@investments');
 
 //Blog routes...
 Route::get('{id}', 'ArticleController@show');

@@ -44,4 +44,9 @@ class FrontendController extends Controller
 
         return view('about', ['name_catches' => $name_catches]);
     }
+
+    public function investments()
+    {
+        return view('civ', ['name_catch' => 'Investments']);
+    }
 }
