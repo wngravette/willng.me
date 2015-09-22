@@ -111,6 +111,20 @@ span.title_suppliment_special {
     }
 }
 
+.footer {
+
+    p {
+
+        a {
+            border-bottom: 1px dotted black;
+
+            &.icon {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
 
 
 @media #{$mobile} {

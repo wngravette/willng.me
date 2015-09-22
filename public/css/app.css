@@ -75,6 +75,11 @@ span.title_suppliment_special {
     max-height: 600px;
     line-height: 24px; }
 
+.footer p a {
+  border-bottom: 1px dotted black; }
+  .footer p a.icon {
+    border-bottom: none; }
+
 @media (max-width: 860px) {
   h1 {
     font-size: 150%; }
