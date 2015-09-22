@@ -100,7 +100,8 @@
                         labels: {
                             enabled: true,
                             format: '{value} ms'
-                        }
+                        },
+                        floor: 0,
                     },
                     xAxis: {
                         reversed: true,
