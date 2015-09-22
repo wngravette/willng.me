@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\CIV;
 use App\CIVTotal;
 use App\Article;
+use App\APISpeed;
 
 class FrontendController extends Controller
 {
@@ -32,8 +33,11 @@ class FrontendController extends Controller
         //Logic for CIV chart
         $priceData = CIVTotal::orderBy('id', 'desc')->take(30)->get();
 
+        //Get API speed
+        $apiSpeed = APISpeed::orderby('id', 'desc')->take(30)->get();
 
-        return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'blog_posts' => $blogPosts]);
+
+        return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'api_speed' => $apiSpeed, 'blog_posts' => $blogPosts]);
 
     }
 
