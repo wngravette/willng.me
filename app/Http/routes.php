@@ -39,6 +39,7 @@ Route::get('dev/id', 'DevController@id');
 Route::get('dev/retro', 'DevController@retroVal');
 Route::get('dev/send', 'DevController@send');
 Route::get('dev/sendToCachet', 'DevController@sendToCachet');
+Route::get('dev/apitime', 'DevController@apitime');
 
 //Backend routes...
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {

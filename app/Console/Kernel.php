@@ -7,6 +7,7 @@ use App\User;
 use App\CIV;
 use App\Investment;
 use App\CIVTotal;
+use App\APISpeed;
 use DB;
 
 use Illuminate\Console\Scheduling\Schedule;
@@ -31,6 +32,29 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        //Fetch API speed
+
+        $schedule->call(function () {
+
+            $start = microtime(false);
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "http://willng.me/api/inv/civ");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_exec($ch);
+
+            $end = microtime(false);
+
+            curl_close($ch);
+
+            $timeTaken = $end - $start;
+            $timeTaken = round($timeTaken * 1000);
+
+            $apiSpeed = new APISpeed;
+            $apiSpeed->speed_ms = $timeTaken;
+            $apiSpeed->save();
+
+        })->everyMinute();
 
         //Fetch latest price data for all investments
 
