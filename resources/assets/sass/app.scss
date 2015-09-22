@@ -111,19 +111,19 @@ span.title_suppliment_special {
     }
 }
 
-.footer {
 
-    p {
 
-        a {
-            border-bottom: 1px dotted black;
+p {
 
-            &.icon {
-                border-bottom: none;
-            }
+    a {
+        border-bottom: 1px dotted black;
+
+        &.no-link {
+            border-bottom: none;
         }
     }
 }
+
 
 
 
