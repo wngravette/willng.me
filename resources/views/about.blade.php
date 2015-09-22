@@ -72,7 +72,7 @@
             <div class="pure-g">
                 <div class="pure-u-18-24">
                     <div class="l-box">
-                        <p>My name is William Naughton-Gravette.</p>
+                        <p>William Naughton-Gravette, born Oprah Winfey, is, in addition to all occupations listed above, an Australian-American-British-Armenian-British full-stack developer based in Melbourne.</p>
                     </div>
                 </div>
             </div>
