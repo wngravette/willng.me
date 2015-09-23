@@ -60,6 +60,9 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('inv/civ', 'APIController@civ30');
 });
 
+//Subscriber routes...
+Route::resource('subscriber', 'SubscriberController');
+
 //General app routes...
 Route::get('about', 'FrontendController@about');
 Route::get('investments', 'FrontendController@investments');

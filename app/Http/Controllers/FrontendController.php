@@ -15,7 +15,7 @@ use App\APISpeed;
 
 class FrontendController extends Controller
 {
-    public function render()
+    public function render(Request $request)
     {
         //Deeply hilarious catches
         $name_catches = ['Melbournian', 'Lord of Dance', 'Septuple Threat', 'Swimwear Model', '60% Cheese', 'Purveyor of Cheap Wine', 'Mummy Blogger', 'Recommended by 4 out of 5 Dentists', 'Vapid Moron, Frankly', 'Still Alive', 'Gold-digger', 'Your Dad', 'Coolest Mother-in-law Ever', 'Refined Lady', 'The Original People\'s Princess', 'Grier Family Social Media Spin-doctor'];
@@ -36,8 +36,10 @@ class FrontendController extends Controller
         //Get API speed
         $apiSpeed = APISpeed::orderby('id', 'desc')->take(30)->get();
 
+        //Check if person is subscribed
+        $isSubscribed = $request->cookie('is_subscribed');
 
-        return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'api_speed' => $apiSpeed, 'blog_posts' => $blogPosts]);
+        return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'api_speed' => $apiSpeed, 'blog_posts' => $blogPosts, 'is_subscribed' => $isSubscribed]);
 
     }
 
