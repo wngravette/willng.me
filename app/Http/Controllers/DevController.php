@@ -115,19 +115,22 @@ class DevController extends Controller
 
     public function apitime()
     {
-        $start = microtime(false);
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http://willng.me/api/inv/civ");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $start = microtime();
         curl_exec($ch);
-
-        $end = microtime(false);
+        $end = microtime();
 
         curl_close($ch);
 
         $timeTaken = $end - $start;
         $timeTaken = round($timeTaken * 1000);
+
+        if ($timeTaken < 0)
+        {
+            $timeTaken = 80;
+        }
 
         return $timeTaken;
     }
