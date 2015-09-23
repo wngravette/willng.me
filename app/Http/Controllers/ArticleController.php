@@ -45,7 +45,7 @@ class ArticleController extends Controller
         $article->article_url = rtrim(preg_replace('/[^a-z0-9]+/i', '-', strtolower(strip_tags($input['article_headline']))), "-");
         $article->save();
 
-        return redirect('/dashboard')->with('status', 'Your blog post has been published.');;
+        return redirect('/dashboard')->with('status', 'Your blog post has been published.');
     }
 
     /**
