@@ -8,7 +8,6 @@ use Mail;
 use Input;
 use Cookie;
 use App\Subscriber;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -53,7 +52,7 @@ class SubscriberController extends Controller
         $subscriber = new Subscriber($input);
         $subscriber->save();
 
-        Mail::send('email.signup', ['email' => $subscriberEmail], function ($m) use ($subscriber) {
+        Mail::queue('email.signup', ['email' => $subscriberEmail], function ($m) use ($subscriber) {
             $m->to($subscriber->email, 'Subscriber')->subject('For some reason you just signed up for my blog posts.');
         });
 
