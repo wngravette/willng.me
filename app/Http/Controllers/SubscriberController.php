@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Mail;
 use Input;
 use Cookie;
 use App\Subscriber;
@@ -42,14 +43,19 @@ class SubscriberController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
+        $subscriberEmail = $request->email;
 
-        if (Subscriber::where('email', $request->email))
+        if (Subscriber::where('email', $request->email)->exists())
         {
             return redirect('/')->with('msg', 'Your email is already on the list, you flog.');
         }
 
         $subscriber = new Subscriber($input);
         $subscriber->save();
+
+        Mail::send('email.signup', ['email' => $subscriberEmail], function ($m) use ($subscriber) {
+            $m->to($subscriber->email, 'Subscriber')->subject('For some reason you just signed up for my blog posts.');
+        });
 
         return redirect('/')->withCookie(cookie()->forever('is_subscribed', '1'));;
     }
