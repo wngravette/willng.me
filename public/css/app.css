@@ -18,6 +18,11 @@ a:visited {
 .mobile_only {
   display: none; }
 
+.msg {
+  margin-bottom: 3em; }
+  .msg .attn {
+    color: #D01212; }
+
 h1 {
   font-weight: 200;
   font-family: proxima-nova, sans-serif !important;

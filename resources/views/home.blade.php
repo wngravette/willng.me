@@ -4,6 +4,16 @@
 @endsection
 @section('content')
 <div class="pure-g">
+    @if (Session::has('msg'))
+    <div class="pure-u-1 pure-u-lg-16-24 msg animated shake">
+        <div class="pure-u-1 msg-item">
+            <div class="l-box">
+                <p class="attn">Ding dong!</p>
+                <h1>{{Session::get('msg')}}</h1>
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="pure-u-1 pure-u-lg-16-24 blog">
         @foreach ($blog_posts as $post)
         <div class="pure-u-1 blog-item">

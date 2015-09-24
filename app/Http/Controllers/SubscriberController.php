@@ -42,6 +42,12 @@ class SubscriberController extends Controller
     public function store(Request $request)
     {
         $input = Input::all();
+
+        if (Subscriber::where('email', $request->email))
+        {
+            return redirect('/')->with('msg', 'Your email is already on the list, you flog.');
+        }
+
         $subscriber = new Subscriber($input);
         $subscriber->save();
 

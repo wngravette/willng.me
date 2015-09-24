@@ -1,4 +1,5 @@
 $bgColour: #fbfbfb;
+$attnColour: #D01212;
 $contentWidth: 980px;
 
 $primaryFont: proxima-nova, sans-serif;
@@ -30,6 +31,14 @@ a:visited {
 
 .mobile_only {
     display: none;
+}
+
+.msg {
+    margin-bottom: 3em;
+
+    .attn {
+        color: $attnColour;
+    }
 }
 
 h1 {
