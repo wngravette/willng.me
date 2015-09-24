@@ -224,7 +224,7 @@ ol li {
       <div class="content">
         <table>
           <tr>
-            <td align="center">
+            <td align="left">
               <p>This email was sent automatically because for some reason you decided it was a good idea to give me your email.</a>
               </p>
             </td>
