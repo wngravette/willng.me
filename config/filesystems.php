@@ -64,8 +64,8 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key'    => env('S3_KEY'),
-            'secret' => env('S3_SECRET'),
+            'key'    => env('AWS_KEY'),
+            'secret' => env('AWS_SECRET'),
             'region' => 'ap-southeast-2',
             'bucket' => 'willng-me',
         ],
