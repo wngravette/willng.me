@@ -4,8 +4,84 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0932345f86b0c856e58fa1e43929c5c1",
+    "hash": "924abe66c16c7c325b9d6ffa3c5ffb8f",
     "packages": [
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "f09d297fd919fadf9b12ac0cbea082a5494e63e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f09d297fd919fadf9b12ac0cbea082a5494e63e9",
+                "reference": "f09d297fd919fadf9b12ac0cbea082a5494e63e9",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.3|~6.0.1|~6.1",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "~1.0",
+                "mtdowling/jmespath.php": "~2.2",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "doctrine/cache": "To use the DoctrineCacheAdapter",
+                "ext-curl": "To send requests using cURL",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aws\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2015-09-17 19:59:34"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "2.0.0",
@@ -580,16 +656,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.16",
+            "version": "v5.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1"
+                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e34dcc0c57e0f560248aec5128161256ff8bf4e1",
-                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
+                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
                 "shasum": ""
             },
             "require": {
@@ -704,7 +780,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-09-04 12:46:14"
+            "time": "2015-09-16 16:57:12"
         },
         {
             "name": "laravelcollective/html",
@@ -758,20 +834,23 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.12",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086"
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7323424a9d39c24e597ed3f2144419dfbb52e086",
-                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
+            },
+            "conflict": {
+                "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
                 "ext-fileinfo": "*",
@@ -835,7 +914,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-05 12:06:41"
+            "time": "2015-09-22 19:18:28"
         },
         {
             "name": "monolog/monolog",
@@ -958,6 +1037,61 @@
             "time": "2015-01-11 23:07:46"
         },
         {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "a7d99d0c836e69d27b7bfca1d33ca2759fba3289"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/a7d99d0c836e69d27b7bfca1d33ca2759fba3289",
+                "reference": "a7d99d0c836e69d27b7bfca1d33ca2759fba3289",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2015-05-27 17:21:31"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.20.0",
             "source": {
@@ -1006,16 +1140,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
                 "shasum": ""
             },
             "require": {
@@ -1047,7 +1181,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-07-14 17:31:05"
+            "time": "2015-09-19 14:15:08"
         },
         {
             "name": "psr/http-message",
@@ -2685,16 +2819,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.7",
+            "version": "4.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa"
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
-                "reference": "dab2ada9e9a503d2ec3c32fe0fb59dea9bdd9dfa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
                 "shasum": ""
             },
             "require": {
@@ -2753,7 +2887,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-14 06:57:22"
+            "time": "2015-09-20 12:56:44"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
