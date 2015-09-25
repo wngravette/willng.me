@@ -46,7 +46,7 @@ class SubscriberController extends Controller
 
         if (Subscriber::where('email', $request->email)->exists())
         {
-            return redirect('/')->with('msg', 'Your email is already on the list, you flog.');
+            return redirect('/')->with(['msg' => 'Your email is already on the list, you flog.', 'msg_type' => 'red']);
         }
 
         $subscriber = new Subscriber($input);
@@ -56,7 +56,7 @@ class SubscriberController extends Controller
             $m->to($subscriber->email, 'Subscriber')->subject('For some reason you just signed up for my blog posts.');
         });
 
-        return redirect('/')->withCookie(cookie()->forever('is_subscribed', '1'));;
+        return redirect('/')->with(['msg' => 'I put your email in the thing.', 'msg_type' => 'green'])->withCookie(cookie()->forever('is_subscribed', '1'));;
     }
 
     /**
