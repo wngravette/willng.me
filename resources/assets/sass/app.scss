@@ -1,5 +1,6 @@
 $bgColour: #fbfbfb;
-$attnColour: #D01212;
+$redColour: #D01212;
+$greenColour: #12D024;
 $contentWidth: 980px;
 
 $primaryFont: proxima-nova, sans-serif;
@@ -36,8 +37,12 @@ a:visited {
 .msg {
     margin-bottom: 3em;
 
-    .attn {
-        color: $attnColour;
+    .red {
+        color: $redColour;
+    }
+
+    .green {
+        color: $greenColour;
     }
 }
 

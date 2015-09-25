@@ -20,8 +20,10 @@ a:visited {
 
 .msg {
   margin-bottom: 3em; }
-  .msg .attn {
+  .msg .red {
     color: #D01212; }
+  .msg .green {
+    color: #12D024; }
 
 h1 {
   font-weight: 200;
