@@ -33,13 +33,16 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 //Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 //Dev routes...
-Route::get('dev/asx', 'DevController@asx');
-Route::get('dev/value', 'DevController@getValue');
-Route::get('dev/id', 'DevController@id');
-Route::get('dev/retro', 'DevController@retroVal');
-Route::get('dev/send', 'DevController@send');
-Route::get('dev/sendToCachet', 'DevController@sendToCachet');
-Route::get('dev/apitime', 'DevController@apitime');
+Route::group(['middleware' => 'auth', 'prefix' => 'dev'], function () {
+    Route::get('asx', 'DevController@asx');
+    Route::get('value', 'DevController@getValue');
+    Route::get('id', 'DevController@id');
+    Route::get('retro', 'DevController@retroVal');
+    Route::get('send', 'DevController@send');
+    Route::get('sendToCachet', 'DevController@sendToCachet');
+    Route::get('apitime', 'DevController@apitime');
+    Route::get('subs', 'DevController@subs');
+});
 
 //Backend routes...
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
