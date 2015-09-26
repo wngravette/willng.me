@@ -9,6 +9,7 @@ use App\User;
 use App\CIV;
 use App\Investment;
 use App\CIVTotal;
+use App\Subscriber;
 use DB;
 
 use App\Http\Requests;
@@ -138,5 +139,12 @@ class DevController extends Controller
     public function id()
     {
         return uniqid(true);
+    }
+
+    public function subs()
+    {
+        $subscribers = Subscriber::all();
+
+        return $subscribers;
     }
 }
