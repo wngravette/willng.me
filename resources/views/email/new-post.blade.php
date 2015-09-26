@@ -1,7 +1,9 @@
 @extends('email.wrap')
 @section('content')
-<p>Nice one,</p>
-<p>Now, whenever I make a new blog post, I'll harrass you via email about it.</p>
+<p>I made a new blog post,</p>
+<h2>{{$article->article_headline}}</h2>
+<h3>{{$article->article_catch}}</h3>
+<br/>
 <p>Peace and blessings,</p>
 <p>William Naughton-Gravette.</p>
 @endsection
