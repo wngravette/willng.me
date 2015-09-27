@@ -25,6 +25,10 @@ a:visited {
   .msg .green {
     color: #12D024; }
 
+.obscured {
+  unicode-bidi: bidi-override;
+  direction: rtl; }
+
 h1 {
   font-weight: 200;
   font-family: proxima-nova, sans-serif !important;

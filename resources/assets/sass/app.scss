@@ -46,6 +46,11 @@ a:visited {
     }
 }
 
+.obscured {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
 h1 {
     font-weight: $primaryFontWeight;
     font-family: $primaryFont !important;
