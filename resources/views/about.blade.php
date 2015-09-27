@@ -73,6 +73,7 @@
                 <div class="pure-u-18-24">
                     <div class="l-box">
                         <p>William Naughton-Gravette, born Oprah Winfey, is, in addition to all occupations listed above, an Australian-American-British-Armenian-British full-stack developer based in Melbourne.</p>
+                        <p>He is co-founder and partner at Melbourne-based creative and development firm <a href="http://n-r.co">Naughton &amp; Ross</a>, and can be contacted directly at <a class="obscured">em.gnlliw@mailliw</a>.</p>
                     </div>
                 </div>
             </div>
