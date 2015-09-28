@@ -10,6 +10,7 @@ use App\CIV;
 use App\Investment;
 use App\CIVTotal;
 use App\Subscriber;
+use App\APISpeed;
 use DB;
 
 use App\Http\Requests;
@@ -146,5 +147,12 @@ class DevController extends Controller
         $subscribers = Subscriber::all();
 
         return $subscribers;
+    }
+
+    public function apidelete()
+    {
+        $apiRecords = APISpeed::orderBy('id', 'asc')->take(1000)->get();
+
+        return $apiRecords;
     }
 }

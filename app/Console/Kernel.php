@@ -115,5 +115,15 @@ class Kernel extends ConsoleKernel
 
         })->weekdays()->at('17:00');
 
+        // Delete roughly 17 hours of API speed data for every 34 hours collected.
+
+        $schedule->call(function () {
+
+            $apiRecords = APISpeed::orderBy('id', 'asc')->take(1000)->get();
+
+            $apiRecords->delete();
+
+        })->dailyAt('0:00');
+
     }
 }

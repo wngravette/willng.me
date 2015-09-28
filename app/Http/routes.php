@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dev'], function () {
     Route::get('sendToCachet', 'DevController@sendToCachet');
     Route::get('apitime', 'DevController@apitime');
     Route::get('subs', 'DevController@subs');
+    Route::get('apidelete', 'DevController@apidelete');
 });
 
 //Backend routes...
