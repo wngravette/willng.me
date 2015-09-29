@@ -2,14 +2,10 @@
 
 namespace App\Console;
 
-use Mail;
-use App\User;
-use App\CIV;
-use App\Investment;
-use App\CIVTotal;
 use App\APISpeed;
-use DB;
-
+use App\CIV;
+use App\CIVTotal;
+use App\Investment;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -27,7 +23,8 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param \Illuminate\Console\Scheduling\Schedule $schedule
+     *
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -37,7 +34,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "http://willng.me/api/inv/civ");
+            curl_setopt($ch, CURLOPT_URL, 'http://willng.me/api/inv/civ');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $start = microtime();
             curl_exec($ch);
@@ -48,12 +45,11 @@ class Kernel extends ConsoleKernel
             $timeTaken = $end - $start;
             $timeTaken = round($timeTaken * 1000);
 
-            if ($timeTaken < 0)
-            {
+            if ($timeTaken < 0) {
                 $timeTaken = 80;
             }
 
-            $apiSpeed = new APISpeed;
+            $apiSpeed = new APISpeed();
             $apiSpeed->speed_ms = $timeTaken;
             $apiSpeed->save();
 
@@ -66,18 +62,16 @@ class Kernel extends ConsoleKernel
             $companies = Investment::all();
             $lastPrices = [];
 
-            foreach ($companies as $company)
-            {
+            foreach ($companies as $company) {
                 $ticker = $company->ticker;
-                $handle = @fopen("http://download.finance.yahoo.com/d/quotes.csv?s=$ticker.AX&f=l1", "r");
-                if ($handle !== FALSE)
-                {
+                $handle = @fopen("http://download.finance.yahoo.com/d/quotes.csv?s=$ticker.AX&f=l1", 'r');
+                if ($handle !== false) {
                     $lastPrice = fgetcsv($handle);
                     fclose($handle);
                 }
                 $last_price = $lastPrice[0];
 
-                $civ = new CIV;
+                $civ = new CIV();
 
                 $civ->record_hash = uniqid(true);
                 $civ->ticker = $ticker;
@@ -95,8 +89,7 @@ class Kernel extends ConsoleKernel
             $tickers = Investment::all();
             $values = [];
 
-            foreach ($tickers as $company)
-            {
+            foreach ($tickers as $company) {
                 $ticker = $company->ticker;
                 $amountOwned = $company->number_owned;
                 $civEntry = CIV::where('ticker', $ticker)->orderBy('id', 'desc')->first();
@@ -106,7 +99,7 @@ class Kernel extends ConsoleKernel
 
             $civTotal = array_sum($values);
 
-            $civEntry = new CIVTotal;
+            $civEntry = new CIVTotal();
 
             $civEntry->record_hash = uniqid(true);
             $civEntry->amount = $civTotal;
@@ -124,6 +117,5 @@ class Kernel extends ConsoleKernel
             $apiRecords->delete();
 
         })->dailyAt('0:00');
-
     }
 }

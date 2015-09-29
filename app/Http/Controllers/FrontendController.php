@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Auth;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
+use App\APISpeed;
+use App\Article;
 use App\CIV;
 use App\CIVTotal;
-use App\Article;
-use App\APISpeed;
+use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
@@ -25,8 +20,7 @@ class FrontendController extends Controller
         //Blog posts
         $blogPosts = Article::orderBy('created_at', 'desc')->take(5)->get();
 
-        foreach ($blogPosts as $post)
-        {
+        foreach ($blogPosts as $post) {
             $post->human_time = $post->created_at->diffForHumans();
         }
 
@@ -40,7 +34,6 @@ class FrontendController extends Controller
         $isSubscribed = $request->cookie('is_subscribed');
 
         return view('home', ['name_catch' => $name_catch, 'name_catches' => $name_catches, 'price_data' => $priceData, 'api_speed' => $apiSpeed, 'blog_posts' => $blogPosts, 'is_subscribed' => $isSubscribed]);
-
     }
 
     public function about()

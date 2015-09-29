@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Mail;
-use Input;
-use Cookie;
 use App\Subscriber;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Cookie;
+use Illuminate\Http\Request;
+use Input;
+use Mail;
 
 class SubscriberController extends Controller
 {
@@ -36,7 +33,8 @@ class SubscriberController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param Request $request
+     *
      * @return Response
      */
     public function store(Request $request)
@@ -44,8 +42,7 @@ class SubscriberController extends Controller
         $input = Input::all();
         $subscriberEmail = $request->email;
 
-        if (Subscriber::where('email', $request->email)->exists())
-        {
+        if (Subscriber::where('email', $request->email)->exists()) {
             return redirect('/')->with(['msg' => 'Your email is already on the list, you flog.', 'msg_type' => 'red']);
         }
 
@@ -56,13 +53,14 @@ class SubscriberController extends Controller
             $m->to($subscriber->email, 'Subscriber')->subject('For some reason you just signed up for my blog posts.');
         });
 
-        return redirect('/')->with(['msg' => 'I put your email in the thing.', 'msg_type' => 'green'])->withCookie(cookie()->forever('is_subscribed', '1'));;
+        return redirect('/')->with(['msg' => 'I put your email in the thing.', 'msg_type' => 'green'])->withCookie(cookie()->forever('is_subscribed', '1'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
@@ -73,7 +71,8 @@ class SubscriberController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
@@ -84,8 +83,9 @@ class SubscriberController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param Request $request
+     * @param int     $id
+     *
      * @return Response
      */
     public function update(Request $request, $id)
@@ -96,7 +96,8 @@ class SubscriberController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
