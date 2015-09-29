@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Input;
 use App\Article;
 use App\Jobs\NotifySubscribersOfBlog;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
@@ -43,7 +39,7 @@ class ArticleController extends Controller
     {
         $input = Input::all();
         $article = new Article($input);
-        $article->article_url = rtrim(preg_replace('/[^a-z0-9]+/i', '-', strtolower(strip_tags($input['article_headline']))), "-");
+        $article->article_url = rtrim(preg_replace('/[^a-z0-9]+/i', '-', strtolower(strip_tags($input['article_headline']))), '-');
         $article->save();
 
         $this->dispatch(new NotifySubscribersOfBlog());
@@ -61,7 +57,9 @@ class ArticleController extends Controller
     {
         $article_url = $id;
         $article = Article::where('article_url', $article_url)->first();
-        if (!$article) {abort(404);}
+        if (! $article) {
+            abort(404);
+        }
         $article->humantime = $article->created_at->diffForHumans();
 
         return view('blog', ['name_catch' => 'Shit Blog', 'article' => $article]);
@@ -76,6 +74,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id)->toArray();
+
         return view('backend.edit-article', ['article' => $article]);
     }
 

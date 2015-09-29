@@ -14,13 +14,11 @@
 Route::get('/', 'FrontendController@render');
 
 // Authentication routes...
-Route::get('login', function()
-{
+Route::get('login', function () {
     return Redirect::to('auth/login');
 });
 
-Route::get('logout', function()
-{
+Route::get('logout', function () {
     return Redirect::to('auth/logout');
 });
 
@@ -55,7 +53,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 });
 
 Route::group(['prefix' => 'api'], function () {
-    Route::get('/', function() {
+    Route::get('/', function () {
         return view('api', ['name_catch' => 'API']);
     });
     Route::get('blog', 'APIController@blog5');
