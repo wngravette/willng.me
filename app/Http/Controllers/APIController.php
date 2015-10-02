@@ -56,7 +56,14 @@ class APIController extends Controller
     public function subs()
     {
         $subscribers = Subscriber::all();
-        
+        foreach ($subscribers as $subscriber) 
+        {
+            $subEmail = $subscriber->email;
+            $subEmail = explode("@", $subEmail);
+            $subEmail[0] = "****";
+            $protectedEmail = $subEmail[0] . "@" . $subEmail[1];
+            $ssubscriber->email = $protecteedEmail;
+        }
         return $subscribers;
     }
 }
