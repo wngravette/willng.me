@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Artisan;
 use App\Article;
 use App\CIVTotal;
+use App\Subscriber;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -50,5 +51,12 @@ class APIController extends Controller
             $civ_ind->amount = $civ_ind->amount / $rand;
         }
         return $civ;
+    }
+    
+    public function subs()
+    {
+        $subscribers = Subscriber::all();
+        
+        return $subscribers;
     }
 }
