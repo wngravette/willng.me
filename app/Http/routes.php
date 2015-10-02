@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::post('edit-post/{id}', 'ArticleController@update');
 });
 
+//API routes...
 Route::group(['prefix' => 'api'], function () {
     Route::get('/', function() {
         return view('api', ['name_catch' => 'API']);
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get('blog/latest', 'APIController@latestBlog');
     Route::get('inv/civ/latest', 'APIController@civ');
     Route::get('inv/civ', 'APIController@civ30');
+    Route::get('subscribers', 'APIController@subs');
 });
 
 //Subscriber routes...
