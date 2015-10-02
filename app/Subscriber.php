@@ -9,4 +9,6 @@ class Subscriber extends Model
     protected $table = 'subscribers';
 
     protected $fillable = ['email'];
+    
+    protected $hidden = ['email'];
 }
