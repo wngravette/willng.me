@@ -62,7 +62,7 @@ class APIController extends Controller
             $subEmail = explode("@", $subEmail);
             $subEmail[0] = "****";
             $protectedEmail = $subEmail[0] . "@" . $subEmail[1];
-            $subscriber->email = $protecteedEmail;
+            $subscriber->email = $protectedEmail;
         }
         return $subscribers;
     }
