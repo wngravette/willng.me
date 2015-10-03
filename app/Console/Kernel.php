@@ -33,16 +33,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         //Fetch API speed
-
         $schedule->call(function () {
-
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://willng.me/api/inv/civ");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $start = microtime();
             curl_exec($ch);
             $end = microtime();
-
             curl_close($ch);
 
             $timeTaken = $end - $start;
@@ -56,11 +53,9 @@ class Kernel extends ConsoleKernel
             $apiSpeed = new APISpeed;
             $apiSpeed->speed_ms = $timeTaken;
             $apiSpeed->save();
-
         })->everyMinute();
 
         //Fetch latest price data for all investments
-
         $schedule->call(function () {
 
             $companies = Investment::all();
@@ -82,7 +77,6 @@ class Kernel extends ConsoleKernel
                 $civ->record_hash = uniqid(true);
                 $civ->ticker = $ticker;
                 $civ->last_price = $last_price;
-
                 $civ->save();
             }
 
@@ -91,10 +85,8 @@ class Kernel extends ConsoleKernel
         //Calculate the CIV and publish it to the CIVTotals table, making the data public.
 
         $schedule->call(function () {
-
             $tickers = Investment::all();
             $values = [];
-
             foreach ($tickers as $company)
             {
                 $ticker = $company->ticker;
@@ -103,26 +95,19 @@ class Kernel extends ConsoleKernel
                 $value = $amountOwned * $civEntry->last_price;
                 array_push($values, $value);
             }
-
             $civTotal = array_sum($values);
 
             $civEntry = new CIVTotal;
-
             $civEntry->record_hash = uniqid(true);
             $civEntry->amount = $civTotal;
-
             $civEntry->save();
 
         })->weekdays()->at('17:00');
 
         // Delete roughly 17 hours of API speed data for every 34 hours collected.
-
         $schedule->call(function () {
-
             $apiRecords = APISpeed::orderBy('id', 'asc')->take(1000)->get();
-
             $apiRecords->delete();
-
         })->dailyAt('0:00');
 
     }
