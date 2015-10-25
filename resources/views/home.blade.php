@@ -27,7 +27,7 @@
     </div>
     <div class="pure-u-1 pure-u-lg-8-24">
         <div class="l-box">
-            <p>I'm a 19 year-old from Melbourne. This website exists because convention says people with anything to do with tech need a website. Here's some data:</p>
+            <p>I'm a 19 year-old moron and socialite from Melbourne. Here's some data:</p>
             <p>I have interests in a number of publically-listed Australian companies, and I like to keep track of them here for everyone’s perusal.</p>
             <p>So, here's my performance on the ASX in the past month or so. New data is published at 5 pm on weekdays.</p>
             <script>
