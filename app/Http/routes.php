@@ -11,7 +11,10 @@
 |
 */
 
+// Frontend routes...
 Route::get('/', 'FrontendController@render');
+Route::get('about', 'FrontendController@about');
+Route::get('investments', 'FrontendController@investments');
 
 // Authentication routes...
 Route::get('login', function()
@@ -69,9 +72,6 @@ Route::group(['prefix' => 'api'], function () {
 //Subscriber routes...
 Route::resource('subscriber', 'SubscriberController');
 
-//General app routes...
-Route::get('about', 'FrontendController@about');
-Route::get('investments', 'FrontendController@investments');
-
 //Blog routes...
+Route::get('archive', 'ArticleController@index');
 Route::get('{id}', 'ArticleController@show');

@@ -24,6 +24,13 @@
             </div>
         </div>
         @endforeach
+        <div class="pure-u-1 blog-item">
+            <div class="l-box">
+                <p>
+                    <a href="/archive">See the archive.</a>
+                </p>
+            </div>
+        </div>
     </div>
     <div class="pure-u-1 pure-u-lg-8-24">
         <div class="l-box">
