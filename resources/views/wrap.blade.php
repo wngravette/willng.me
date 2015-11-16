@@ -23,6 +23,7 @@
         <script src="{{asset('js/chart-themes/gray.js')}}"/></script>
         <script src="https://use.typekit.net/dtm4seu.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <script src="https://squawk.cc/squawk.js"></script>
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{asset('img/favicons')}}/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{asset('img/favicons')}}/apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('img/favicons')}}/apple-touch-icon-72x72.png" />
