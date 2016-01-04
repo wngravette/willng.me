@@ -60,6 +60,7 @@
         @yield('additional_head')
     </head>
     <body>
+
         <div class="container">
             <div class="pure-g header">
                 <div class="pure-u-1">
@@ -71,5 +72,17 @@
             </div>
             @yield('content')
         </div>
+        <script>
+            var name_catches = [
+                @foreach ($name_catches as $catch)
+                '{{$catch}}',
+                @endforeach
+            ];
+            $(".title_suppliment").click(function() {
+                //var randomElement = _.sample(name_catches);
+                alert("flog");
+                //$(this).html(randomElement);
+            });
+        </script>
     </body>
 </html>

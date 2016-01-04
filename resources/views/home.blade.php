@@ -3,13 +3,6 @@
 <h1 class="header_under">Full Stack Developer <span class="sep">&#183;</span> <span class="second">Partner at Naughton &amp; Ross</span></h1>
 @endsection
 @section('content')
-<script>
-    var name_catches = [
-        @foreach ($name_catches as $catch)
-        {{$catch}},
-        @endforeach
-    ]
-</script>
 <div class="pure-g">
     @if (Session::has('msg'))
     <div class="pure-u-1 pure-u-lg-16-24 msg animated flash">
